@@ -1,0 +1,9 @@
+s3w-haproxy:
+  build: .
+  ports:
+   - "8001:80"
+  volumes:
+    - ./samples/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+    - ./samples/newrelic-agent-supervisord.conf:/etc/supervisord/conf.d/newrelic-agent-supervisord.conf
+    - ./samples/agent-a0labs.cfg:/etc/newrelic/agent-a0labs.cfg
+    - ./samples/agent-a0labs-newrelic:/etc/newrelic/agent-a0labs-newrelic
